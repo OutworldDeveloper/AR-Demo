@@ -44,10 +44,8 @@ public class QRPlacer : MonoBehaviour
     {
         _debugger.Push("OnFingerDown");
 
-        //if (finger.index != 0)
-        //    return;
-        //
-        //_debugger.Push("Index is not zero");
+        if (finger.index != 0)
+            return;
 
         if (!_arRaycastManager.Raycast(finger.currentTouch.screenPosition, _hits, TrackableType.PlaneWithinPolygon))
             return;

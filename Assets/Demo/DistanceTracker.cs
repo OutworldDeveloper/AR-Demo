@@ -46,13 +46,13 @@ public class DistanceTracker : MonoBehaviour
         }
 
         float distance = Vector3.Distance(_placer.QRA.transform.position, _placer.QRB.transform.position);
-        _distanceLabel.text = distance.ToString("0.00");
+        _distanceLabel.text = Mathf.FloorToInt(distance * 100f).ToString();
 
         Vector3 midPoint = Vector3.Lerp(_placer.QRA.transform.position, _placer.QRB.transform.position, 0.5f);
         _line.position = midPoint;
         _line.transform.forward = (_placer.QRA.transform.position - _placer.QRB.transform.position).normalized;
 
-        _line.transform.localScale = new Vector3(0.01f, 0.01f, Mathf.Max(0f, distance - 0.1f));
+        _line.transform.localScale = new Vector3(0.007f, 0.007f, Mathf.Max(0f, distance - 0.1f));
     }
 
 }
