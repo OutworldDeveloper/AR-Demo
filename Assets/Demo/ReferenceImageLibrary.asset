@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: QR Code Library
+  m_Name: ReferenceImageLibrary
   m_EditorClassIdentifier: 
-  m_GuidLow: 5334299641254474900
-  m_GuidHigh: 10177898088774834861
+  m_GuidLow: 5198803406459695063
+  m_GuidHigh: 4798135305697783438
   m_DataStore:
     m_Storage: []
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 5533867512328056261
-      m_GuidHigh: 7899996348398476418
+      m_GuidLow: 5714312144861332610
+      m_GuidHigh: 10700646867365403782
     m_SerializedTextureGuid:
       m_GuidLow: 14088446237759952387
       m_GuidHigh: 9177759965138652442
-    m_Size: {x: 0.2, y: 0.2}
+    m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
-    m_Name: QRA
-    m_Texture: {fileID: 0}
+    m_Name: A
+    m_Texture: {fileID: 2800000, guid: 9eded6033735c3841a0de4fb0ff45d7f, type: 3}
   - m_SerializedGuid:
-      m_GuidLow: 5534663840458104460
-      m_GuidHigh: 2850534961000272512
+      m_GuidLow: 4643508783883558037
+      m_GuidHigh: 16858508435226550179
     m_SerializedTextureGuid:
       m_GuidLow: 2293651186775047872
       m_GuidHigh: 17545875735358300650
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
-    m_Name: QRB
-    m_Texture: {fileID: 0}
+    m_Name: B
+    m_Texture: {fileID: 2800000, guid: 22613ec0af9a1fd4ea612def04797ff3, type: 3}

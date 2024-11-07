@@ -41,7 +41,9 @@ public class DistanceTracker : MonoBehaviour
 
         if (!showDistance)
         {
-            _distanceLabel.text = "NO QRs DETECTED";
+            _distanceLabel.text = _detector.QRA == null ?
+                 "0/2 QRs detected" :
+                 "1/2 QRs detected"; ;
             return;
         }
 

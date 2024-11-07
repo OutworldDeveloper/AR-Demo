@@ -66,16 +66,4 @@ public sealed class QRDetector : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Debug.Log(
-            $"There are {_trackedImageManager.trackables.count} images being tracked.");
-
-        foreach (var trackedImage in _trackedImageManager.trackables)
-        {
-            Debug.Log($"Image: {trackedImage.referenceImage.name} is at " +
-                      $"{trackedImage.transform.position}");
-        }
-    }
-
 }
