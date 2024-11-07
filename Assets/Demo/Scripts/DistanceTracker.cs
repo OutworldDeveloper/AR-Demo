@@ -2,7 +2,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(QRPlacer))]
+[RequireComponent(typeof(QRDetector))]
 public class DistanceTracker : MonoBehaviour
 {
 
@@ -10,13 +10,13 @@ public class DistanceTracker : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _distanceLabel;
     [SerializeField] private Material _lineMaterial;
 
-    private QRPlacer _placer;
+    private QRDetector _detector;
     private Transform _line;
 
     private void Awake()
     {
-        _placer = GetComponent<QRPlacer>();
-        _placer.Changed += UpdateDisplay;
+        _detector = GetComponent<QRDetector>();
+        _detector.Changed += UpdateDisplay;
         _line = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
         _line.GetComponent<MeshRenderer>().material = _lineMaterial;
         _line.GetComponent<Collider>().enabled = false;
@@ -24,7 +24,7 @@ public class DistanceTracker : MonoBehaviour
 
     private void OnDestroy()
     {
-        _placer.Changed -= UpdateDisplay;
+        _detector.Changed -= UpdateDisplay;
     }
 
     private void Start()
@@ -34,23 +34,23 @@ public class DistanceTracker : MonoBehaviour
 
     private void UpdateDisplay()
     {
-        bool showDistance = _placer.QRA != null && _placer.QRB != null;
+        bool showDistance = _detector.QRA != null && _detector.QRB != null;
 
         _distanceTextLabel.gameObject.SetActive(showDistance);
         _line.gameObject.SetActive(showDistance);
 
         if (!showDistance)
         {
-            _distanceLabel.text = "Place two QRs";
+            _distanceLabel.text = "NO QRs DETECTED";
             return;
         }
 
-        float distance = Vector3.Distance(_placer.QRA.transform.position, _placer.QRB.transform.position);
+        float distance = Vector3.Distance(_detector.QRA.transform.position, _detector.QRB.transform.position);
         _distanceLabel.text = Mathf.FloorToInt(distance * 100f).ToString();
 
-        Vector3 midPoint = Vector3.Lerp(_placer.QRA.transform.position, _placer.QRB.transform.position, 0.5f);
+        Vector3 midPoint = Vector3.Lerp(_detector.QRA.transform.position, _detector.QRB.transform.position, 0.5f);
         _line.position = midPoint;
-        _line.transform.forward = (_placer.QRA.transform.position - _placer.QRB.transform.position).normalized;
+        _line.transform.forward = (_detector.QRA.transform.position - _detector.QRB.transform.position).normalized;
 
         _line.transform.localScale = new Vector3(0.007f, 0.007f, Mathf.Max(0f, distance - 0.1f));
     }

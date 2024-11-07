@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: QR Code Library
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5334299641254474900
+  m_GuidHigh: 10177898088774834861
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5533867512328056261
+      m_GuidHigh: 7899996348398476418
+    m_SerializedTextureGuid:
+      m_GuidLow: 14088446237759952387
+      m_GuidHigh: 9177759965138652442
+    m_Size: {x: 0.2, y: 0.2}
+    m_SpecifySize: 0
+    m_Name: QRA
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5534663840458104460
+      m_GuidHigh: 2850534961000272512
+    m_SerializedTextureGuid:
+      m_GuidLow: 2293651186775047872
+      m_GuidHigh: 17545875735358300650
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: QRB
+    m_Texture: {fileID: 0}
